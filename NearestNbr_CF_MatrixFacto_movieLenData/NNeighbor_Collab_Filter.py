@@ -15,7 +15,7 @@ from scipy.spatial.distance import correlation
 
 # import the data
 # import the movie rating data
-file_path1 = 'C:/Users/pande/Desktop/DataScience/ByteSizedRecEng_udemy/MovieLens_data/ml-100k/ml-100k/u.data'
+file_path1 = 'C:/Users/pande/Desktop/DataScience/data/u.data'
 data_r = pd.read_csv(file_path1, sep='\t', header=None, \
                    names=['userId','itemId','rating','timestamp'])
 # looking at the data
@@ -25,7 +25,7 @@ print(data_r.head())
 print(" ")
 
 # import the movie info data
-file_path2 = 'C:/Users/pande/Desktop/DataScience/ByteSizedRecEng_udemy/MovieLens_data/ml-100k/ml-100k/u.item'
+file_path2 = 'C:/Users/pande/Desktop/DataScience/data/u.item'
 data_m = pd.read_csv(file_path2, sep="|", header=None, index_col=False,
                      names=["itemId","title"], usecols=[0,1],encoding = 'latin')
 # looking at the data
