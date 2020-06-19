@@ -1,7 +1,7 @@
 '''
 Created: @Chandi_Bhandari for  Teaching for ML Student
 Nearest Neighbor Method: Using Correlation
-It as a bug: needed t fix
+It has a bug: needed to fix
 '''
 # importing the general packages
 import numpy as np
