@@ -1,0 +1,15 @@
+MovieLensData:
+THis files contains different files for recommendation. I have used the MovieLens data from
+http://files.grouplens.org/datasets/movielens/ml-100k.zip
+which consists 100k data.
+V1-
+It has separate files for: Nearest Neighbor Colaboarative filtering by correlation, by Matrix factorization and Associatiuon rule
+files name: Association_rule_movie.py, NearestNbr_CollabFilter_Corr.py, NearestNbr_MatrixFactorize.py, 
+NNeighbor_Collab_Filter.py (need to modify)
+
+V2-
+Module (class object) and API and ApI caller
+File Name: request.py, NearNbrAPI.py, NearNbrAPI1.py(slight modification on process), NearestNeighbor_CF.py, NearestNeighbor_CF1.py
+
+V3- 
+Jupyter Notebook with all description of process and Mathematical Formulation

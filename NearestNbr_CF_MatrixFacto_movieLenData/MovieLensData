@@ -1,8 +1,0 @@
-
-THis files contains different files for recommendation. I have used the MovieLens data from
-http://files.grouplens.org/datasets/movielens/ml-100k.zip
-which consists 100k data.
-V1-
-It has separate files for: Nearest Neighbor Colaboarative filtering by correlation, by Matrix factorization and Associatiuon rule
-V2-
-Object and API and ApI caller
