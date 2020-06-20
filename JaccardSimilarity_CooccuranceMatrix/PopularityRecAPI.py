@@ -52,6 +52,9 @@ print(uniqueValues)
 # call the function to show most listend songs
 mostListendSong = Popularity_model.mostListenedSongs(data)
 print(mostListendSong.head())
+# since the id are too long we can provide the index
+users = full_data.userId.unique()
+Songs = full_data.songId.unique()
 
 # import our module
 import PopularityRecommender as recEng
@@ -72,7 +75,10 @@ def popularity_recommender():
     print("Recommendation started")
     most_popular_songs =[]
     req = request.get_json()
-    userId = req['userId']
+    # if userId itself is given
+    #userId = req['userId']
+    # if userId location index is given
+    userId = users[req["userId_place"]]
     K = req['K']
     print(f'Recommended  Top {K} popular songs for {userId} are: \n')
     recommended_songs = Popularity_model.recommendation(userId)
