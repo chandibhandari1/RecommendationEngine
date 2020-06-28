@@ -75,6 +75,8 @@ def personalized_recommender():
     # if userId location index is given
     # userId = users[req["userId_place"]]
     K = req['K']
+    usersSong = personalized_model.get_user_item(userId)
+    print(f'The users {K} songs are: \n', usersSong[:K])
     print(f'Recommended  Top {K} personalized songs for {userId} are: \n')
     recommended_songs = personalized_model.recommend(userId)
     # for the song id
@@ -103,7 +105,7 @@ def itemSimilarity_recommender():
     print(similar_songs)
     print(f'Recommended  Top {K} similar songs for {song} are: \n')
     print(similar_songs[0][0:K])
-    return jsonify({"Songs":most_popular_songs[0][0:K]})
+    return jsonify({"Songs":similar_songs[0][0:K]})
 
 if __name__ =='__main__':
     app.run(debug=True, threaded=False)

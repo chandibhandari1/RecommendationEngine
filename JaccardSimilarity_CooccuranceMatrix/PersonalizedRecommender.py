@@ -68,12 +68,13 @@ class personalizedRecommendation():
                 # calculate the intersection of users of song i and song j
                 users_intersection = users_i.intersection(users_j)
                 # calculate the cooccurence matrix[i,j] as Jaccard Index (Jaccard Similarity)
-                if len(users_intersection) == 0:
-                    cooccurence_matrix[j, i] = 0
-                else:
-                    # calculate the union of users of song i and song j
+                if len(users_intersection) != 0:
+                    # calculate the union
                     users_union = users_i.union(users_j)
                     cooccurence_matrix[j, i] = float(len(users_intersection)) / float(len(users_union))
+                else:
+                    # calculate the union of users of song i and song j
+                    cooccurence_matrix[j, i] = 0
         return cooccurence_matrix
 
     # Top recommendation: similarity recommendation using cooccurence matrix
@@ -107,7 +108,7 @@ class personalizedRecommendation():
         """
         user_songs = self.get_user_item(user)
         all_songs = self.getAllSongs()
-        cooccurence_matrix = self.cooccurence_matrix(user_songs, all_songs)
+        cooccurence_matrix = self.construct_cooccurenceMatrix(user_songs, all_songs)
         recommended_song_df = self.topRecommendation(user, cooccurence_matrix, all_songs, user_songs)
         return recommended_song_df
 
